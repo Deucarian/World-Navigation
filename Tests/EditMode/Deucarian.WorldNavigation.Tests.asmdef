@@ -4,8 +4,7 @@
   "references": [
     "Deucarian.WorldNavigation",
     "Deucarian.WorldSpawning",
-    "Deucarian.GameplayFoundation",
-    "Deucarian.Encounters"
+    "Deucarian.GameplayFoundation"
   ],
   "includePlatforms": [
     "Editor"

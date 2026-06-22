@@ -117,15 +117,15 @@ namespace Deucarian.WorldNavigation.Tests
         {
             GameObject prefab = new GameObject("nav-spawned");
             WorldSpawnService spawn = new WorldSpawnService(
-                new SpawnableCatalog(new[] { new SpawnableDefinition(new Deucarian.Encounters.SpawnableId("enemy.nav"), new GameObjectPrefabProvider(prefab), 1, 1) }),
-                new ChannelPoseResolver(new Dictionary<Deucarian.Encounters.SpawnChannelId, SpawnPose>
+                new SpawnableCatalog(new[] { new SpawnableDefinition(new WorldSpawnableId("enemy.nav"), new GameObjectPrefabProvider(prefab), 1, 1) }),
+                new ChannelPoseResolver(new Dictionary<WorldSpawnChannelId, SpawnPose>
                 {
-                    [new Deucarian.Encounters.SpawnChannelId("channel.nav")] = new SpawnPose(Vector3.zero, Quaternion.identity)
+                    [new WorldSpawnChannelId("channel.nav")] = new SpawnPose(Vector3.zero, Quaternion.identity)
                 }));
             try
             {
                 spawn.Warmup();
-                SpawnResult result = spawn.Spawn(new Deucarian.Encounters.SpawnRequest(new Deucarian.Encounters.EncounterId("encounter.nav"), new Deucarian.Encounters.WaveId("wave.nav"), new Deucarian.Encounters.SpawnGroupId("group.nav"), new Deucarian.Encounters.SpawnableId("enemy.nav"), new Deucarian.Encounters.SpawnChannelId("channel.nav"), 0, 1, 0, 0));
+                SpawnResult result = spawn.Spawn(new WorldSpawnRequest(new WorldSpawnableId("enemy.nav"), new WorldSpawnChannelId("channel.nav"), 1, new WorldSpawnRequestContext("world-navigation-test")));
                 var nav = new WorldNavigationService();
                 Assert.IsTrue(nav.RegisterSpawnedObject(result, new ConstantMovementSpeedProvider(1), out MovementAgentHandle handle).Succeeded);
                 nav.SetDestination(handle.Id, Vector3.right);

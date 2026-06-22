@@ -10,6 +10,44 @@ Unity version:
 
 ## Results
 
+## Phase 1M Compatibility Results
+
+World Navigation compatibility was updated for World Spawning `0.2.0` generic request names:
+
+- `WorldSpawnRequest`
+- `WorldSpawnableId`
+- `WorldSpawnChannelId`
+- `WorldSpawnRequestContext`
+
+Runtime dependencies remain:
+
+- `com.deucarian.gameplay-foundation`
+- `com.deucarian.world-spawning`
+
+No Encounters dependency is present in runtime or test asmdefs.
+
+Import:
+
+- command: `Unity.exe -batchmode -quit -projectPath C:/Repositories/Deucarian/WorldNavigation-TestProject -logFile C:/Repositories/Deucarian/WorldNavigation-TestProject/Unity-Phase1M-Import.log`
+- result: completed with no compiler or package-manager errors. Unity emitted licensing/thread shutdown warnings during batch exit.
+
+EditMode:
+
+- run 1: `10` total, `10` passed, `0` failed. Results: `TestResults-Phase1M-WorldNavigation-EditMode-1.xml`.
+- run 2: `10` total, `10` passed, `0` failed. Results: `TestResults-Phase1M-WorldNavigation-EditMode-2.xml`.
+
+PlayMode:
+
+- run 1: `1` total, `1` passed, `0` failed. Results: `TestResults-Phase1M-WorldNavigation-PlayMode-1.xml`.
+- run 2: `1` total, `1` passed, `0` failed. Results: `TestResults-Phase1M-WorldNavigation-PlayMode-2.xml`.
+
+Benchmark:
+
+- path: `C:/Repositories/Deucarian/WorldNavigation-TestProject/Logs/world-navigation-benchmark-results.json`
+- 1,000 agents for 300 ticks: `94.082 ms`, `0` bytes allocated.
+- 5,000 agents for 300 ticks: `475.690 ms`, `0` bytes allocated.
+- 10,000 agents for 300 ticks: `1010.432 ms`, `0` bytes allocated.
+
 Import:
 
 - command: `Unity.exe -batchmode -quit -projectPath C:/Repositories/Deucarian/WorldNavigation-TestProject -logFile C:/Repositories/Deucarian/WorldNavigation-TestProject-import-2.log`
