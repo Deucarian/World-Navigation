@@ -1,0 +1,26 @@
+{
+  "name": "Deucarian.WorldNavigation.Tests",
+  "rootNamespace": "Deucarian.WorldNavigation.Tests",
+  "references": [
+    "Deucarian.WorldNavigation",
+    "Deucarian.WorldSpawning",
+    "Deucarian.GameplayFoundation",
+    "Deucarian.Encounters"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "noEngineReferences": false
+}

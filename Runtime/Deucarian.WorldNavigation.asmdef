@@ -1,0 +1,17 @@
+{
+  "name": "Deucarian.WorldNavigation",
+  "rootNamespace": "Deucarian.WorldNavigation",
+  "references": [
+    "Deucarian.GameplayFoundation",
+    "Deucarian.WorldSpawning"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
