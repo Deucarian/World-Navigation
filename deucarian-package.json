@@ -1,0 +1,22 @@
+{
+  "packageId": "com.deucarian.world-navigation",
+  "displayName": "Deucarian World Navigation",
+  "ownedCapabilities": [],
+  "runtimeAssemblies": [
+    "Deucarian.WorldNavigation"
+  ],
+  "editorAssemblies": [],
+  "sampleAssemblies": [],
+  "testAssemblies": [
+    "Deucarian.WorldNavigation.PlayModeTests",
+    "Deucarian.WorldNavigation.Tests"
+  ],
+  "requiredDependencies": [
+    "com.deucarian.gameplay-foundation",
+    "com.deucarian.world-spawning"
+  ],
+  "optionalVersionDefinedDependencies": [],
+  "allowedDirectDebugCalls": [],
+  "allowedDirectUnityObjectLifetimeCalls": [],
+  "expectedSamplesRoot": "Samples~"
+}
