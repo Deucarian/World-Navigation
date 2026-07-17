@@ -1,0 +1,17 @@
+{
+  "name": "Deucarian.WorldNavigation.Samples",
+  "rootNamespace": "Deucarian.WorldNavigation.Samples",
+  "references": [
+    "Deucarian.WorldNavigation",
+    "Deucarian.WorldSpawning"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
