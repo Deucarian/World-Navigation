@@ -1,6 +1,6 @@
 {
   "name": "com.deucarian.world-navigation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Deucarian World Navigation",
   "description": "Unity-side centralized navigation for registered movement agents, destination movement, supplied waypoint paths, speed adapters, pose adapters, and diagnostics snapshots.",
   "unity": "6000.3",
@@ -13,8 +13,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "com.deucarian.gameplay-foundation": "0.1.0",
-    "com.deucarian.world-spawning": "0.2.0"
+    "com.deucarian.gameplay-foundation": "0.1.1",
+    "com.deucarian.world-spawning": "0.2.1"
   },
   "samples": [
     {

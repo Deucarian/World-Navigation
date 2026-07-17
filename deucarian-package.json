@@ -1,12 +1,15 @@
 {
   "packageId": "com.deucarian.world-navigation",
   "displayName": "Deucarian World Navigation",
+  "samplePolicy": "playable-scene",
   "ownedCapabilities": [],
   "runtimeAssemblies": [
     "Deucarian.WorldNavigation"
   ],
   "editorAssemblies": [],
-  "sampleAssemblies": [],
+  "sampleAssemblies": [
+    "Deucarian.WorldNavigation.Samples"
+  ],
   "testAssemblies": [
     "Deucarian.WorldNavigation.PlayModeTests",
     "Deucarian.WorldNavigation.Tests"
