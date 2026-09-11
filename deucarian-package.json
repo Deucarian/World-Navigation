@@ -16,7 +16,8 @@
   ],
   "requiredDependencies": [
     "com.deucarian.gameplay-foundation",
-    "com.deucarian.world-spawning"
+    "com.deucarian.world-spawning",
+    "com.deucarian.diagnostics"
   ],
   "optionalVersionDefinedDependencies": [],
   "allowedDirectDebugCalls": [],

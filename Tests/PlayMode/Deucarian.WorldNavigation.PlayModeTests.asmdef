@@ -4,7 +4,8 @@
   "references": [
     "Deucarian.WorldNavigation",
     "Deucarian.WorldSpawning",
-    "Deucarian.GameplayFoundation"
+    "Deucarian.GameplayFoundation",
+    "Deucarian.Diagnostics"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],
