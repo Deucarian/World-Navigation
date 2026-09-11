@@ -158,16 +158,25 @@ namespace Deucarian.WorldNavigation
         private static T[] Copy<T>(IReadOnlyList<T> source) { if (source == null) return Array.Empty<T>(); var copy = new T[source.Count]; for (int i = 0; i < source.Count; i++) copy[i] = source[i]; return copy; }
     }
 
-    public sealed class WorldNavigationService
+    public sealed class WorldNavigationService : IDisposable
     {
         private readonly Dictionary<MovementAgentId, AgentState> _agents = new Dictionary<MovementAgentId, AgentState>();
         private readonly List<MovementAgentId> _ordered = new List<MovementAgentId>();
         private long _nextAgentId;
         public bool Paused { get; private set; }
         public int AgentCount => _agents.Count;
+        public bool IsDisposed { get; private set; }
+
+        public void Dispose()
+        {
+            if (IsDisposed) return;
+            IsDisposed = true; Paused = true;
+            _agents.Clear(); _ordered.Clear();
+        }
 
         public MovementResult Register(MovementAgentDefinition definition)
         {
+            if (IsDisposed) throw new ObjectDisposedException(nameof(WorldNavigationService), "The navigation scope was destroyed. Configure the agent with a live WorldNavigationHost.");
             if (definition == null || definition.PoseAccessor == null || definition.SpeedProvider == null || !definition.PoseAccessor.IsValid) return new MovementResult(MovementStatus.InvalidPoseAccessor, default);
             float speed = definition.SpeedProvider.GetSpeed(definition.Id);
             if (speed < 0f || float.IsNaN(speed) || float.IsInfinity(speed)) return new MovementResult(MovementStatus.InvalidSpeed, definition.Id);
