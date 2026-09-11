@@ -14,7 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "com.deucarian.gameplay-foundation": "0.1.1",
-    "com.deucarian.world-spawning": "0.2.1"
+    "com.deucarian.world-spawning": "0.2.1",
+    "com.deucarian.diagnostics": "0.2.3"
   },
   "samples": [
     {
