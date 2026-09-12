@@ -6,9 +6,13 @@
   "runtimeAssemblies": [
     "Deucarian.WorldNavigation"
   ],
-  "editorAssemblies": [],
+  "editorAssemblies": [
+    "Deucarian.WorldNavigation.Editor"
+  ],
   "sampleAssemblies": [
-    "Deucarian.WorldNavigation.Samples"
+    "Deucarian.Samples.WorldNavigation.DefinitionDeclarations",
+    "Deucarian.WorldNavigation.Samples",
+    "Deucarian.WorldNavigation.Samples.DefinitionWorkflow"
   ],
   "testAssemblies": [
     "Deucarian.WorldNavigation.PlayModeTests",
@@ -17,7 +21,8 @@
   "requiredDependencies": [
     "com.deucarian.gameplay-foundation",
     "com.deucarian.world-spawning",
-    "com.deucarian.diagnostics"
+    "com.deucarian.diagnostics",
+    "com.deucarian.editor"
   ],
   "optionalVersionDefinedDependencies": [],
   "allowedDirectDebugCalls": [],

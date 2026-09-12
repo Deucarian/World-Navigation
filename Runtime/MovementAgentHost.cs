@@ -8,6 +8,9 @@ namespace Deucarian.WorldNavigation
     [DisallowMultipleComponent]
     public sealed class MovementAgentHost : MonoBehaviour, IDiagnosticProvider
     {
+        [SerializeField] private WorldNavigationHost scope;
+        [SerializeField] private MovementPresetKey preset;
+        [SerializeField] private Unity.MovementPresetDefinitionCatalog definitionCatalog;
         private WorldNavigationService service;
         private IMovementSpeedProvider speed;
         private MovementAgentHandle handle;
@@ -38,6 +41,7 @@ namespace Deucarian.WorldNavigation
             {
                 if (destroyed) throw new ObjectDisposedException(nameof(MovementAgentHost));
                 if (service == null) throw new InvalidOperationException("MovementAgentHost '" + name + "' is not configured. Call Configure with the shared WorldNavigationService and a speed provider during startup.");
+                if (service.IsDisposed) throw new InvalidOperationException("MovementAgentHost '" + name + "' belongs to a destroyed navigation scope. Keep its WorldNavigationHost alive while this agent is in use.");
                 if (!registered) throw new InvalidOperationException("MovementAgentHost '" + name + "' is disabled. Enable it before sending movement commands.");
                 return service;
             }
@@ -47,7 +51,15 @@ namespace Deucarian.WorldNavigation
         private void OnDisable() { if (registered) service.Unregister(handle.Id); registered = false; handle = default; }
         private void OnDestroy() { diagnosticRegistration?.Dispose(); diagnosticRegistration = null;  OnDisable(); destroyed = true; service = null; speed = null; }
         private DiagnosticProviderRegistration diagnosticRegistration;
-        private void Awake() => diagnosticRegistration = DiagnosticProviderRegistry.Register(this);
+        private void Awake()
+        {
+            diagnosticRegistration = DiagnosticProviderRegistry.Register(this);
+            if (scope != null && service == null)
+            {
+                var definition = (definitionCatalog != null ? definitionCatalog : Unity.MovementPresetDefinitionCatalog.LoadProject()).Get(preset);
+                Configure(scope.Service, new ConstantMovementSpeedProvider(definition.Speed));
+            }
+        }
         string IDiagnosticProvider.ProviderId => "world-navigation.host." + GetInstanceID();
         string IDiagnosticProvider.DisplayName => "MovementAgentHost";
         void IDiagnosticProvider.Collect(DiagnosticReportBuilder builder)

@@ -1,0 +1,6 @@
+{
+  "name": "Deucarian.WorldNavigation.Samples.DefinitionWorkflow",
+  "references": [
+    "Deucarian.WorldNavigation"
+  ]
+}
