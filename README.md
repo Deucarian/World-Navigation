@@ -1,5 +1,15 @@
 # Deucarian World Navigation
 
+## Typed definition workflow
+
+The preset supplies speed; the scene supplies a destination. One WorldNavigationHost ticks every registered agent in this scope.
+
+Start with the [Definition Workflow walkthrough](Documentation~/DefinitionWorkflow.md).
+Import **Definition Workflow** in Package Manager for a configured sample scene
+and short caller scripts. Definitions can be edited as assets or editable C# declarations; generated keys
+work in code and Inspector dropdowns.
+
+
 `com.deucarian.world-navigation` is a small Unity-side navigation package for centrally ticking registered movement agents.
 
 It supports destination movement, supplied waypoint paths, path-progress reporting, transform pose adapters, speed-provider adapters, stop/pause/resume, despawn-safe cleanup, deterministic update order, and diagnostics snapshots.
@@ -67,3 +77,7 @@ git diff --check
 ## License
 
 MIT. See `LICENSE.md`.
+
+## Simple typed usage
+
+See [Simple usage](Documentation~/SimpleUsage.md) for the short caller, Inspector selections and one-time scoped setup.

@@ -1,0 +1,5 @@
+{
+  "name": "Deucarian.Samples.WorldNavigation.DefinitionDeclarations",
+  "references": ["Deucarian.Editor", "Deucarian.WorldNavigation.Editor"],
+  "includePlatforms": ["Editor"]
+}

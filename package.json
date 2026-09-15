@@ -1,6 +1,6 @@
 {
   "name": "com.deucarian.world-navigation",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "displayName": "Deucarian World Navigation",
   "description": "Unity-side centralized navigation for registered movement agents, destination movement, supplied waypoint paths, speed adapters, pose adapters, and diagnostics snapshots.",
   "unity": "6000.3",
@@ -13,14 +13,21 @@
   },
   "license": "MIT",
   "dependencies": {
-    "com.deucarian.gameplay-foundation": "0.1.1",
-    "com.deucarian.world-spawning": "0.2.1"
+    "com.deucarian.gameplay-foundation": "0.2.0",
+    "com.deucarian.world-spawning": "0.3.0",
+    "com.deucarian.diagnostics": "0.2.3",
+    "com.deucarian.editor": "1.12.0"
   },
   "samples": [
     {
       "displayName": "World Navigation Sandbox",
       "description": "Small sample showing spawned objects registered as movement agents and moved through destination/path commands.",
       "path": "Samples~/WorldNavigationSandbox"
+    },
+    {
+      "displayName": "Definition Workflow",
+      "description": "Playable scene with typed C# calls, Inspector components, editable definitions and shared host ownership.",
+      "path": "Samples~/DefinitionWorkflow"
     }
   ]
 }

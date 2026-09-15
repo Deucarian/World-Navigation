@@ -24,6 +24,8 @@ Allowed dependency shape:
 
 - May depend on Gameplay Foundation for gameplay IDs and shared primitives.
 - May depend on World Spawning only for spawn instance identifiers and despawn-aware adapters.
+- Editor-only movement definition authoring depends on the shared Editor schema
+  and picker infrastructure. Its host owns one movement scope and tick loop.
 
 Required dependencies and why:
 
